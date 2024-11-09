@@ -1,0 +1,26 @@
+{
+  "name": "mycontacts-backend-api",
+  "version": "1.0.0",
+  "description": "This is nodjs and express project for my contacts backend api . Lernig the CURD operations .",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kool-Cool/ContactManager.git"
+  },
+  "author": "Kool-Cool",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Kool-Cool/ContactManager/issues"
+  },
+  "homepage": "https://github.com/Kool-Cool/ContactManager#readme",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "nodemon": "^3.1.7"
+  }
+}
