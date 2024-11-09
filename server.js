@@ -1,17 +1,26 @@
-console.log("This is express project \nStarting the server")
-
-
 const express = require("express");
 const dotenv = require("dotenv");
+
+
+
 const app = express();
 
-const port = 5000;
+const port = process.env.PORT  || 5000;
 
 
-
-// Define a GET route for the home path
 app.get("/", (req, res) => {
     res.send("This is Express project. \nTesting. \n chore:setup");
+});
+
+app.get("/api/contacts", (req, res) => {
+    const contacts = [
+        { id: 1, name: "John Doe", email: "john@example.com" },
+        { id: 2, name: "Jane Smith", email: "jane@example.com" },
+        { id: 3, name: "Sam Green", email: "sam@example.com" }
+    ];
+
+
+    res.status(200).json(contacts);
 });
 
 
