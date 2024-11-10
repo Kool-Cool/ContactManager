@@ -1,4 +1,5 @@
 const express = require("express");
+const errorHandler = require("./middleware/errorHandler");
 const dotenv = require("dotenv").config();
 
 const app = express();
@@ -15,9 +16,14 @@ app.get("/", (req, res) => {
 });
 
 // api routes
+app.use(express.json());
 app.use("/api/contacts", require("./routes/contactRoutes"));
+
+// middlerware
+app.use(errorHandler);
+
 
 app.listen(port, () => {
   console.log(`Starting the server on port ${port}`);
-  console.log(`http://localhost:5000/`);
+  console.log(`http://localhost:${port}/`);
 });
