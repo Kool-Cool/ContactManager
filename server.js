@@ -21,6 +21,7 @@ app.get("/", (req, res) => {
 // api routes
 app.use(express.json());
 app.use("/api/contacts", require("./routes/contactRoutes"));
+app.use("/api/user", require("./routes/userRoutes"));
 
 // middlerware
 app.use(errorHandler);
