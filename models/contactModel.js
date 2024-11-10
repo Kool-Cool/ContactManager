@@ -4,15 +4,16 @@ const contactSchema = mongoose.Schema(
   {
     name: {
       type: String,
-      required: [true, 'Please add the contact name'],
+      required: [true, "Please add the contact name"],
     },
     email: {
       type: String,
-      required: [true, 'Please add email address'],
+      required: [true, "Please add email address"],
+      unique: true,
     },
     phone: {
       type: String,
-      required: [true, 'Please add phone number'],
+      required: [true, "Please add phone number"],
     },
   },
   {
@@ -21,6 +22,8 @@ const contactSchema = mongoose.Schema(
 );
 
 // Create the model from the schema
-const Contact = mongoose.model('Contact', contactSchema);
+// const Contact = mongoose.model('Contact', contactSchema);
 
-module.exports = Contact;
+// module.exports = Contact;
+
+module.exports = mongoose.model('Contact', contactSchema);
